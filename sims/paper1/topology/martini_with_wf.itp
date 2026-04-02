@@ -1,0 +1,18 @@
+; Minimal Martini 2.2 extension for antifreeze water (WF/BP4).
+; BP4 matches P4 against non-water beads and perturbs water packing
+; through the P4-BP4 cross interaction.
+
+#include "../../martini/topology/martini_v2.2.itp"
+
+[ atomtypes ]
+; name  mass  charge  ptype  sigma(nm)  epsilon(kJ/mol)
+  BP4   72.0   0.0      A    0.47       5.00
+
+[ nonbond_params ]
+; i    j    funct  sigma   epsilon
+  BP4  BP4    1    0.47    5.00
+  BP4  P4     1    0.57    5.60
+  BP4  Qd     1    0.47    5.00
+  BP4  Qa     1    0.47    5.00
+  BP4  Na     1    0.47    4.50
+  BP4  C1     1    0.47    2.70

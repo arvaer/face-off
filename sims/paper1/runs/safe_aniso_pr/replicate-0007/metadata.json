@@ -1,0 +1,11 @@
+{
+  "condition": "safe_aniso_pr",
+  "replicate": 7,
+  "seed": 292698564,
+  "nsteps": 2500000,
+  "ensemble": "npt_aniso",
+  "nstlist": 1,
+  "scale": 0.99,
+  "rotation": "y90",
+  "run_dir": "runs/safe_aniso_pr/replicate-0007"
+}

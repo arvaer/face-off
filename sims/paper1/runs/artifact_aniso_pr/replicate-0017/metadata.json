@@ -1,0 +1,11 @@
+{
+  "condition": "artifact_aniso_pr",
+  "replicate": 17,
+  "seed": 894722115,
+  "nsteps": 2500000,
+  "ensemble": "npt_aniso",
+  "nstlist": 20,
+  "scale": 1.0,
+  "rotation": "x90",
+  "run_dir": "runs/artifact_aniso_pr/replicate-0017"
+}

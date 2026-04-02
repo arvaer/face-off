@@ -1,0 +1,11 @@
+{
+  "condition": "safe_nvt",
+  "replicate": 18,
+  "seed": 43802097,
+  "nsteps": 500000,
+  "ensemble": "nvt",
+  "nstlist": 20,
+  "scale": 1.0,
+  "rotation": "none",
+  "run_dir": "runs/safe_nvt/replicate-0018"
+}

@@ -1,0 +1,11 @@
+{
+  "condition": "artifact_semi_pr",
+  "replicate": 23,
+  "seed": 429812542,
+  "nsteps": 2500000,
+  "ensemble": "npt_semi",
+  "nstlist": 20,
+  "scale": 1.0,
+  "rotation": "z90",
+  "run_dir": "runs/artifact_semi_pr/replicate-0023"
+}

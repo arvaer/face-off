@@ -1,0 +1,5 @@
+condition,replicate,ensemble,seed,nsteps,nstlist,scale,rotation,delta_p_mean_bar,delta_p_abs_mean_bar,delta_p_cycle_jump_bar,dominant_axis,elongated_z,final_shape_metric,run_dir
+artifact_nvt,1,nvt,831849611,500000,20,1.0,none,-0.2125416327197345,73.56388358966382,0.13538996215999988,,,nan,runs/artifact_nvt/replicate-0001
+artifact_nvt,2,nvt,677538613,500000,20,1.0,none,-1.0729175341249315,73.96630903117592,0.07538721177999974,,,nan,runs/artifact_nvt/replicate-0002
+artifact_nvt,3,nvt,30267000,500000,20,1.0,none,0.716307777980444,73.38622361281078,0.08881004035999986,,,nan,runs/artifact_nvt/replicate-0003
+artifact_nvt,4,nvt,663578513,500000,20,1.0,none,1.4543232392529852,72.8153328326079,-0.005191345156399932,,,nan,runs/artifact_nvt/replicate-0004

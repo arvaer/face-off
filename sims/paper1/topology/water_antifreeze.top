@@ -1,0 +1,13 @@
+; Martini water + antifreeze topology for the paper-1 solvent box.
+
+#include "martini_with_wf.itp"
+#include "../../martini/topology/w.itp"
+#include "wf.itp"
+
+[ system ]
+Martini water with antifreeze
+
+[ molecules ]
+; name  nmol
+W       1377
+WF       153

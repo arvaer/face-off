@@ -1,0 +1,31 @@
+integrator                  = md
+dt                          = 0.020
+nsteps                      = 500000
+
+nstlog                      = 1000
+nstenergy                   = 1
+nstcalcenergy               = 1
+nstxout-compressed          = 5000
+
+cutoff-scheme               = Verlet
+nstlist                     = 20
+verlet-buffer-tolerance     = -1
+rlist                       = 1.422
+
+rcoulomb                    = 1.1
+rvdw                        = 1.1
+coulombtype                 = reaction-field
+epsilon-rf                  = 15
+vdwtype                     = cutoff
+vdw-modifier                = Potential-shift
+
+tcoupl                      = v-rescale
+tc-grps                     = System
+tau-t                       = 1.0
+ref-t                       = 310
+
+pcoupl                      = no
+
+gen-vel                     = yes
+gen-temp                    = 310
+gen-seed                    = 453290550

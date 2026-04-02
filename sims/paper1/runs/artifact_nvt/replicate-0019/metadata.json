@@ -1,0 +1,11 @@
+{
+  "condition": "artifact_nvt",
+  "replicate": 19,
+  "seed": 687715199,
+  "nsteps": 500000,
+  "ensemble": "nvt",
+  "nstlist": 20,
+  "scale": 1.0,
+  "rotation": "none",
+  "run_dir": "runs/artifact_nvt/replicate-0019"
+}

@@ -1,0 +1,38 @@
+{
+  "artifact_nvt": {
+    "runs": 4,
+    "delta_p_mean_bar_mean": 0.2212929625971908,
+    "delta_p_mean_bar_std": 0.9524437774113368,
+    "delta_p_abs_mean_bar_mean": 73.43293726656461
+  },
+  "safe_nvt": {
+    "runs": 0,
+    "delta_p_mean_bar_mean": NaN,
+    "delta_p_mean_bar_std": 0.0,
+    "delta_p_abs_mean_bar_mean": NaN
+  },
+  "artifact_aniso_pr": {
+    "runs": 0,
+    "delta_p_mean_bar_mean": NaN,
+    "delta_p_mean_bar_std": 0.0,
+    "delta_p_abs_mean_bar_mean": NaN
+  },
+  "safe_aniso_pr": {
+    "runs": 0,
+    "delta_p_mean_bar_mean": NaN,
+    "delta_p_mean_bar_std": 0.0,
+    "delta_p_abs_mean_bar_mean": NaN
+  },
+  "artifact_semi_pr": {
+    "runs": 0,
+    "delta_p_mean_bar_mean": NaN,
+    "delta_p_mean_bar_std": 0.0,
+    "delta_p_abs_mean_bar_mean": NaN
+  },
+  "safe_semi_ber": {
+    "runs": 0,
+    "delta_p_mean_bar_mean": NaN,
+    "delta_p_mean_bar_std": 0.0,
+    "delta_p_abs_mean_bar_mean": NaN
+  }
+}

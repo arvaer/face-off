@@ -1,0 +1,9 @@
+; Martini antifreeze water bead (WF/BP4)
+
+[ moleculetype ]
+; Name  nrexcl
+WF       1
+
+[ atoms ]
+;  nr  type  resnr  residue  atom  cgnr  charge
+   1   BP4     1      WF      WF     1     0.0

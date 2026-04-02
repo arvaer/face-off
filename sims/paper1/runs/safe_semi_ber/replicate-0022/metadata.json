@@ -1,0 +1,11 @@
+{
+  "condition": "safe_semi_ber",
+  "replicate": 22,
+  "seed": 11209597,
+  "nsteps": 2500000,
+  "ensemble": "npt_semi",
+  "nstlist": 1,
+  "scale": 0.99,
+  "rotation": "z90",
+  "run_dir": "runs/safe_semi_ber/replicate-0022"
+}

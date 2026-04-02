@@ -4,7 +4,7 @@
 #   bash run.sh           # full run (50 ns)
 #   bash run.sh --short   # quick test (5 ns)
 
-GMX=~/gromacs-install/bin/gmx_mpi
+GMX=gmx
 EMGRO=../sim/em.gro   # reuse minimized water box from sim/
 
 # Parse flags
