@@ -1,0 +1,25 @@
+; Energy minimization — MARTINI CG
+integrator      = steep
+nsteps          = 5000
+emtol           = 100.0        ; kJ/mol/nm — CG tolerances are looser than AA
+emstep          = 0.01
+
+; Neighbor list
+cutoff-scheme   = Verlet
+nstlist         = 20
+rlist           = 1.2
+verlet-buffer-tolerance = -1
+
+; Electrostatics (shifted, standard MARTINI)
+coulombtype     = reaction-field
+rcoulomb        = 1.1
+epsilon-r       = 15
+epsilon-rf      = 0
+
+; VdW (shifted)
+vdwtype         = cutoff
+vdw-modifier    = potential-shift
+rvdw            = 1.1
+
+; No PBC corrections needed for EM but keep box
+pbc             = xyz

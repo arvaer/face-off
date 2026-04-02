@@ -1,0 +1,9 @@
+; MARTINI CG water bead (P4)
+
+[ moleculetype ]
+; Name  nrexcl
+W        1
+
+[ atoms ]
+;  nr  type  resnr  residue  atom  cgnr  charge
+   1   P4      1      W       W      1     0.0

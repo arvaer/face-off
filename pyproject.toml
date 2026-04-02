@@ -1,0 +1,8 @@
+[project]
+name = "md-signal-art"
+version = "0.1.0"
+description = "GROMACS trajectory export and retro rendering pipeline"
+requires-python = ">=3.11"
+
+[tool.uv]
+package = false

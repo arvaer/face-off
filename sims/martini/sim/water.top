@@ -1,0 +1,11 @@
+; Pure Martini water topology
+
+#include "../topology/martini_v2.2.itp"
+#include "../topology/w.itp"
+
+[ system ]
+Martini water
+
+[ molecules ]
+; name  nmol
+W       1530

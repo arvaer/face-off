@@ -1,0 +1,27 @@
+# GROMACS source tree — clone separately from upstream
+gromacs/
+
+# Simulation binaries and trajectories
+*.trr
+*.xtc
+*.edr
+*.tpr
+*.cpt
+
+# GROMACS generated output (not hand-crafted inputs)
+mdout.mdp
+
+# GROMACS backup files
+\#*#
+
+# Compiled harness binary
+harness/harness
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.uv-cache/
+
+# macOS
+.DS_Store

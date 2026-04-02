@@ -1,0 +1,30 @@
+; Integrator
+integrator      = md
+dt              = 0.020          ; 20 fs — standard Martini
+nsteps          = 500000         ; 10 ns
+
+; Output — CRITICAL: write every step
+nstenergy       = 1
+nstxout-compressed = 5000
+
+; Neighbor list — defaults that cause the artifact
+cutoff-scheme   = Verlet
+nstlist         = 20
+verlet-buffer-tolerance = 0.005  ; VBT active → auto-tunes to nstlist=25, rlist≈1.269
+
+; Nonbonded
+rcoulomb        = 1.1
+rvdw            = 1.1
+coulombtype     = reaction-field
+epsilon-rf      = 15
+vdwtype         = cutoff
+vdw-modifier    = Potential-shift
+
+; Thermostat
+tcoupl          = v-rescale
+tc-grps         = System
+tau-t           = 1.0
+ref-t           = 310
+
+; No barostat — pure NVT
+pcoupl          = no

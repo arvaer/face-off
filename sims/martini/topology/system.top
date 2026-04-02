@@ -1,0 +1,13 @@
+; MARTINI DPPC + water system topology
+
+#include "martini_v2.2.itp"
+#include "dppc.itp"
+#include "w.itp"
+
+[ system ]
+DPPC in water
+
+[ molecules ]
+; name  nmol
+DPPC     1
+W       80

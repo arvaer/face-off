@@ -1,0 +1,5 @@
+{
+  "scene": "scene.json",
+  "viewer": "retro_viewer.html",
+  "blender_import": "../../md_signal_art/blender_import_points.py"
+}

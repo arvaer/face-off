@@ -1,0 +1,40 @@
+; MARTINI 2.2 force field — non-bonded parameters only
+; Full version: cgmartini.nl
+; Stripped to bead types used by DPPC + W
+
+[ defaults ]
+; nbfunc  comb-rule  gen-pairs  fudgeLJ  fudgeQQ
+    1         2         no        1.0      1.0
+
+[ atomtypes ]
+; name  mass  charge  ptype  sigma(nm)  epsilon(kJ/mol)
+; Charged
+  Qd    72.0   0.0      A    0.47       5.00
+  Qa    72.0   0.0      A    0.47       5.00
+; Intermediate polar
+  Na    72.0   0.0      A    0.47       4.00
+; Apolar
+  C1    72.0   0.0      A    0.47       3.50
+; Water
+  P4    72.0   0.0      A    0.47       5.00
+
+[ nonbond_params ]
+; i    j    funct  sigma   epsilon
+; Qd-Qa (attractive, head group)
+  Qd   Qa     1    0.47    5.60
+; Qd/Qa - Na
+  Qd   Na     1    0.47    4.50
+  Qa   Na     1    0.47    4.50
+; Qd/Qa - C1 (repulsive)
+  Qd   C1     1    0.47    2.70
+  Qa   C1     1    0.47    2.70
+; Na - C1
+  Na   C1     1    0.47    3.40
+; C1-C1
+  C1   C1     1    0.47    3.50
+; Water interactions
+  P4   P4     1    0.47    5.00
+  P4   Qd     1    0.47    5.00
+  P4   Qa     1    0.47    5.00
+  P4   Na     1    0.47    4.50
+  P4   C1     1    0.47    2.70

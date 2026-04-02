@@ -1,0 +1,35 @@
+; NPT with fix — NO artifact
+integrator      = md
+dt              = 0.020
+nsteps          = 2500000        ; 50 ns
+
+; Output
+nstenergy       = 25
+nstxout-compressed = 5000
+
+; Neighbor list — FIX: disable VBT, use generous rlist
+cutoff-scheme   = Verlet
+nstlist         = 20
+verlet-buffer-tolerance = -1     ; disables VBT and dual pair list
+rlist           = 1.45           ; generous buffer (0.35 nm)
+
+; Nonbonded
+rcoulomb        = 1.1
+rvdw            = 1.1
+coulombtype     = reaction-field
+epsilon-rf      = 15
+vdwtype         = cutoff
+vdw-modifier    = Potential-shift
+
+; Thermostat
+tcoupl          = v-rescale
+tc-grps         = System
+tau-t           = 1.0
+ref-t           = 310
+
+; Barostat — same semi-isotropic setup
+pcoupl          = Parrinello-Rahman
+pcoupltype      = semiisotropic
+tau-p           = 4.0
+ref-p           = 1.0 1.0
+compressibility = 4.5e-5 4.5e-5

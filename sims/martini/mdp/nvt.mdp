@@ -1,0 +1,45 @@
+; NVT equilibration — MARTINI CG
+integrator      = md
+dt              = 0.020        ; 20 fs — standard MARTINI timestep
+nsteps          = 50000        ; 1 ns
+
+; Output
+nstxout         = 500
+nstvout         = 500
+nstlog          = 500
+nstenergy       = 500
+nstxout-compressed = 500
+
+; Neighbor list — key parameters for artifact study
+cutoff-scheme   = Verlet
+nstlist         = 20           ; update every 20 steps = 400 fs
+rlist           = 1.2          ; buffer beyond rvdw=1.1
+verlet-buffer-tolerance = -1   ; use rlist exactly, don't auto-adjust
+
+; Electrostatics
+coulombtype     = reaction-field
+rcoulomb        = 1.1
+epsilon-r       = 15
+epsilon-rf      = 0
+
+; VdW
+vdwtype         = cutoff
+vdw-modifier    = potential-shift
+rvdw            = 1.1
+
+; Thermostat
+tcoupl          = v-rescale
+tc-grps         = DPPC W
+tau-t           = 1.0   1.0
+ref-t           = 300   300
+
+; No pressure coupling in NVT
+pcoupl          = no
+
+; Constraints
+constraints     = none         ; MARTINI uses bonds, not constraints
+
+pbc             = xyz
+gen-vel         = yes
+gen-temp        = 300
+gen-seed        = 42
