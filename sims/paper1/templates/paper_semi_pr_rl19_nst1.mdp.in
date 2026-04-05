@@ -23,12 +23,14 @@ tcoupl                      = v-rescale
 tc-grps                     = System
 tau-t                       = 1.0
 ref-t                       = 310
+nsttcouple                  = 1
 
-pcoupl                      = Berendsen
+pcoupl                      = Parrinello-Rahman
 pcoupltype                  = semiisotropic
 tau-p                       = 12.0
 ref-p                       = 1.0 1.0
 compressibility             = 4.5e-5 4.5e-5
+nstpcouple                  = 1
 
 gen-vel                     = yes
 gen-temp                    = 310

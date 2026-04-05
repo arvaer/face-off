@@ -5,7 +5,7 @@ nsteps                      = __NSTEPS__
 nstlog                      = 1000
 nstenergy                   = 25
 nstcalcenergy               = 25
-nstxout-compressed          = 5000
+nstxout-compressed          = 25000
 
 cutoff-scheme               = Verlet
 nstlist                     = 1

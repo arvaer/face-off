@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -25,6 +26,18 @@ CONDITIONS = {
         "ensemble": "nvt",
         "nstlist": 20,
     },
+    "paper_nvt_rl128_nst25": {
+        "template": "paper_nvt_rl128_nst25.mdp.in",
+        "steps_arg": "nvt_steps",
+        "ensemble": "nvt",
+        "nstlist": 25,
+    },
+    "paper_nvt_rl1422_nst20": {
+        "template": "safe_nvt.mdp.in",
+        "steps_arg": "nvt_steps",
+        "ensemble": "nvt",
+        "nstlist": 20,
+    },
     "artifact_aniso_pr": {
         "template": "artifact_aniso_pr.mdp.in",
         "steps_arg": "npt_steps",
@@ -32,6 +45,24 @@ CONDITIONS = {
         "nstlist": 20,
     },
     "safe_aniso_pr": {
+        "template": "safe_aniso_pr.mdp.in",
+        "steps_arg": "npt_steps",
+        "ensemble": "npt_aniso",
+        "nstlist": 1,
+    },
+    "paper_aniso_pr_rl128_nst25": {
+        "template": "paper_aniso_pr_rl128_nst25.mdp.in",
+        "steps_arg": "npt_steps",
+        "ensemble": "npt_aniso",
+        "nstlist": 25,
+    },
+    "paper_aniso_pr_rl19_nst20": {
+        "template": "paper_aniso_pr_rl19_nst20.mdp.in",
+        "steps_arg": "npt_steps",
+        "ensemble": "npt_aniso",
+        "nstlist": 20,
+    },
+    "paper_aniso_pr_rl19_nst1": {
         "template": "safe_aniso_pr.mdp.in",
         "steps_arg": "npt_steps",
         "ensemble": "npt_aniso",
@@ -45,6 +76,30 @@ CONDITIONS = {
     },
     "safe_semi_ber": {
         "template": "safe_semi_ber.mdp.in",
+        "steps_arg": "npt_steps",
+        "ensemble": "npt_semi",
+        "nstlist": 1,
+    },
+    "paper_semi_pr_rl19_nst20": {
+        "template": "paper_semi_pr_rl19_nst20.mdp.in",
+        "steps_arg": "npt_steps",
+        "ensemble": "npt_semi",
+        "nstlist": 20,
+    },
+    "paper_semi_pr_rl19_nst1": {
+        "template": "paper_semi_pr_rl19_nst1.mdp.in",
+        "steps_arg": "npt_steps",
+        "ensemble": "npt_semi",
+        "nstlist": 1,
+    },
+    "paper_semi_ber_rl19_nst1": {
+        "template": "safe_semi_ber.mdp.in",
+        "steps_arg": "npt_steps",
+        "ensemble": "npt_semi",
+        "nstlist": 1,
+    },
+    "paper_semi_cres_rl19_nst1": {
+        "template": "paper_semi_cres_rl19_nst1.mdp.in",
         "steps_arg": "npt_steps",
         "ensemble": "npt_semi",
         "nstlist": 1,
@@ -85,9 +140,9 @@ export OMP_NUM_THREADS="$OMP_THREADS"
   -c start.gro \
   -p "$ROOT/topology/water_antifreeze.top" \
   -o run.tpr \
-  -maxwarn 1
+  -maxwarn 2
 
-"$GMX" mdrun -deffnm run -ntmpi 1 -ntomp "$OMP_THREADS"
+"$GMX" mdrun -deffnm run -ntmpi 1 -ntomp "$OMP_THREADS" -pin on
 """
     path = run_dir / "run.sh"
     path.write_text(script)
@@ -123,6 +178,8 @@ def main():
 
     for condition, meta in CONDITIONS.items():
         cond_dir = RUNS / condition
+        if args.overwrite and cond_dir.exists():
+            shutil.rmtree(cond_dir)
         cond_dir.mkdir(parents=True, exist_ok=True)
         manifest["conditions"][condition] = []
         for rep in range(1, args.replicates + 1):
